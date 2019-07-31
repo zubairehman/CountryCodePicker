@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   CountryCodePicker(
-                      onChanged: print,
+                      onChanged: _onCountryChange,
                       supportedLanguages: codes,
                       // Initial selection and favorite can be one of code ('IT') OR dial_code('+39')
                       initialSelection: 'DK',
@@ -65,5 +65,26 @@ class _MyAppState extends State<MyApp> {
                 ],
               ),
             )));
+  }
+
+  void _onCountryChange(CountryCode countryCode) {
+    // change user language based on selected locale
+//    var locale;
+//    if(countryCode.code == 'US') {
+//      locale = 'en';
+//    } else if(countryCode.code == 'DK') {
+//      locale = 'da';
+//    } if(countryCode.code == 'ES') {
+//      locale = 'es';
+//    }
+
+    print("New Country selected: " +
+        countryCode.toString() +
+        " Name: " +
+        countryCode.name +
+        " Code: " +
+        countryCode.code +
+        " Locale: " +
+        countryCode.locale);
   }
 }

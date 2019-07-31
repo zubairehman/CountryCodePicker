@@ -53,7 +53,7 @@ class _SelectionDialogState extends State<SelectionDialog> {
         children: [
           Container(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
+            height: 300.0,
             child: ListView(
               children: [
                 widget.favoriteElements.isEmpty
