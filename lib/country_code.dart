@@ -20,7 +20,7 @@ class CountryCode {
   /// the locale (en, es, da)
   String locale;
 
-  CountryCode({this.name, this.flagUri, this.code, this.dialCode});
+  CountryCode({this.name, this.flagUri, this.code, this.dialCode, this.locale});
 
   @override
   String toString() => "$dialCode";

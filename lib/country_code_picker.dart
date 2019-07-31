@@ -52,11 +52,10 @@ class CountryCodePicker extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-
     // check to see if user provided supported languages
     // then use those languages, else use already provided languages
     List<Map> jsonList;
-    if(supportedLanguages != null) {
+    if (supportedLanguages != null) {
       jsonList = supportedLanguages;
     } else {
       jsonList = codes;
@@ -68,6 +67,7 @@ class CountryCodePicker extends StatefulWidget {
               code: s['code'],
               dialCode: s['dial_code'],
               flagUri: 'flags/${s['code'].toLowerCase()}.png',
+              locale: s['locale'],
             ))
         .toList();
 
