@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:country_code_picker/country_code_picker.dart';
+import 'country_codes.dart';
 
 void main() => runApp(new MyApp());
 
@@ -27,8 +28,11 @@ class _MyAppState extends State<MyApp> {
                 children: <Widget>[
                   CountryCodePicker(
                       onChanged: print,
+                      supportedLanguages: codes,
                       // Initial selection and favorite can be one of code ('IT') OR dial_code('+39')
-                      initialSelection: 'IT',
+                      initialSelection: 'DK',
+                      showCountryOnly: true,
+                      showOnlyCountryWhenClosed: true,
                       favorite: ['+39', 'FR']),
                   SizedBox(
                     width: 400,
@@ -41,6 +45,7 @@ class _MyAppState extends State<MyApp> {
                         showCountryOnly: true,
                         showOnlyCountryWhenClosed: true,
                         alignLeft: true,
+                        showSearchBar: true,
                       ),
                     ),
                   ),

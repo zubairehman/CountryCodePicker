@@ -17,6 +17,9 @@ class CountryCode {
   /// the dial code (+39,+93..)
   String dialCode;
 
+  /// the locale (en, es, da)
+  String locale;
+
   CountryCode({this.name, this.flagUri, this.code, this.dialCode});
 
   @override
