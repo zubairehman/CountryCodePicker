@@ -93,30 +93,35 @@ class _SelectionDialogState extends State<SelectionDialog> {
   Widget _buildOption(CountryCode e) {
     return Container(
       width: 400,
-      child: Flex(
-        direction: Axis.horizontal,
+      child: Column(
         children: <Widget>[
-          widget.showFlag
-              ? Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 16.0),
-                    child: Image.asset(
-                      e.flagUri,
-                      package: 'country_code_picker',
-                      width: 32.0,
-                    ),
+          Flex(
+            direction: Axis.horizontal,
+            children: <Widget>[
+              widget.showFlag
+                  ? Flexible(
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 16.0),
+                  child: Image.asset(
+                    e.flagUri,
+                    package: 'country_code_picker',
+                    width: 32.0,
                   ),
-                )
-              : Container(),
-          Expanded(
-            flex: 4,
-            child: Text(
-              widget.showCountryOnly
-                  ? e.toCountryStringOnly()
-                  : e.toLongString(),
-              overflow: TextOverflow.fade,
-            ),
+                ),
+              )
+                  : Container(),
+              Expanded(
+                flex: 4,
+                child: Text(
+                  widget.showCountryOnly
+                      ? e.toCountryStringOnly()
+                      : e.toLongString(),
+                  overflow: TextOverflow.fade,
+                ),
+              ),
+            ],
           ),
+          Divider()
         ],
       ),
     );
